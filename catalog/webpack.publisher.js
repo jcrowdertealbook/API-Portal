@@ -69,8 +69,7 @@ const publisherConfig = {
         new CopyWebpackPlugin({
             patterns: [
                 { from: `./src/config.publish.json`, to: `config.json` },
-                { from: `./src/config.runtime.json`, to: `assets/config.json` },
-                { from: `./templates/default.json`, to: "editors/templates/default.json" }
+                { from: `./src/config.runtime.json`, to: `assets/config.json` }
             ]
         }),
         new webpack.ProvidePlugin({ Buffer: ['buffer', 'Buffer'] })
