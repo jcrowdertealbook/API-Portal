@@ -1,0 +1,2735 @@
+{
+  "paths": {
+    "/data/suppliers/{supplier_id}": {
+      "get": {
+        "responses": {
+          "404": {
+            "description": "Record not found"
+          },
+          "200": {
+            "description": "Supplier description",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CorporateSupplierResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/DEFAULT_ERROR"
+          }
+        },
+        "tags": [
+          "suppliers"
+        ]
+      },
+      "parameters": [
+        {
+          "in": "path",
+          "name": "supplier_id",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      ],
+      "put": {
+        "responses": {
+          "422": {
+            "$ref": "#/components/responses/UNPROCESSABLE_ENTITY"
+          },
+          "404": {
+            "description": "Record not found"
+          },
+          "200": {
+            "description": "An updated supplier description",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LegislativeSupplierResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/DEFAULT_ERROR"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SupplierUpdate"
+              }
+            }
+          }
+        },
+        "tags": [
+          "suppliers"
+        ]
+      }
+    },
+    "/data/suppliers": {
+      "post": {
+        "responses": {
+          "422": {
+            "$ref": "#/components/responses/UNPROCESSABLE_ENTITY"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "201": {
+            "description": "A legislative supplier has been created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LegislativeSupplierResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/DEFAULT_ERROR"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LegislativeSupplierCreate"
+              }
+            }
+          }
+        },
+        "tags": [
+          "suppliers"
+        ]
+      }
+    },
+    "/data/suppliers/{supplier_id}/buyer": {
+      "get": {
+        "responses": {
+          "404": {
+            "description": "Record not found"
+          },
+          "200": {
+            "description": "A buyer supplier relationship has been retrieved",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SupplierBuyerResponse1"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/DEFAULT_ERROR"
+          }
+        },
+        "tags": [
+          "suppliers"
+        ]
+      },
+      "parameters": [
+        {
+          "in": "path",
+          "name": "supplier_id",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      ],
+      "post": {
+        "responses": {
+          "422": {
+            "$ref": "#/components/responses/UNPROCESSABLE_ENTITY"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "201": {
+            "description": "A buyer supplier relationship has been created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SupplierBuyerResponse1"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/DEFAULT_ERROR"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SupplierUpdate"
+              }
+            }
+          }
+        },
+        "tags": [
+          "suppliers"
+        ]
+      },
+      "put": {
+        "responses": {
+          "422": {
+            "$ref": "#/components/responses/UNPROCESSABLE_ENTITY"
+          },
+          "404": {
+            "description": "Record not found"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "200": {
+            "description": "A buyer supplier relationship has been updated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SupplierBuyerResponse1"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/DEFAULT_ERROR"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SupplierUpdate"
+              }
+            }
+          }
+        },
+        "tags": [
+          "suppliers"
+        ]
+      },
+      "delete": {
+        "responses": {
+          "404": {
+            "description": "Record not found"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "200": {
+            "description": "A buyer supplier relationship has been delete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LegislativeSupplierResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/DEFAULT_ERROR"
+          }
+        },
+        "tags": [
+          "suppliers"
+        ]
+      }
+    },
+    "/data/suppliers/{supplier_id}/facilities": {
+      "get": {
+        "responses": {
+          "404": {
+            "description": "Record not found"
+          },
+          "200": {
+            "description": "A list of supplier facilities has been retrieved",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SupplierFacilityResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/DEFAULT_ERROR"
+          }
+        },
+        "tags": [
+          "suppliers"
+        ]
+      },
+      "parameters": [
+        {
+          "in": "path",
+          "name": "supplier_id",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      ],
+      "post": {
+        "responses": {
+          "422": {
+            "$ref": "#/components/responses/UNPROCESSABLE_ENTITY"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "201": {
+            "description": "A supplier facility has been created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SupplierFacilityResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/DEFAULT_ERROR"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SupplierFacilityCreate"
+              }
+            }
+          }
+        },
+        "tags": [
+          "suppliers"
+        ]
+      }
+    },
+    "/data/suppliers/{supplier_id}/facilities/{facility_id}": {
+      "get": {
+        "responses": {
+          "404": {
+            "description": "Record not found"
+          },
+          "200": {
+            "description": "A supplier facility has been retrieved",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SupplierFacilityResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/DEFAULT_ERROR"
+          }
+        },
+        "tags": [
+          "suppliers"
+        ]
+      },
+      "parameters": [
+        {
+          "in": "path",
+          "name": "facility_id",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        {
+          "in": "path",
+          "name": "supplier_id",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      ],
+      "put": {
+        "responses": {
+          "422": {
+            "$ref": "#/components/responses/UNPROCESSABLE_ENTITY"
+          },
+          "404": {
+            "description": "Record not found"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "200": {
+            "description": "A supplier facility has been updated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SupplierFacilityResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/DEFAULT_ERROR"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SupplierFacilityUpdate"
+              }
+            }
+          }
+        },
+        "tags": [
+          "suppliers"
+        ]
+      },
+      "delete": {
+        "responses": {
+          "404": {
+            "description": "Record not found"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "200": {
+            "description": "A supplier facility has been deleted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SupplierFacilityResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/DEFAULT_ERROR"
+          }
+        },
+        "tags": [
+          "suppliers"
+        ]
+      }
+    },
+    "/data/corporate_suppliers": {
+      "post": {
+        "responses": {
+          "422": {
+            "$ref": "#/components/responses/UNPROCESSABLE_ENTITY"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "201": {
+            "description": "A corporate supplier has been created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CorporateSupplierResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/DEFAULT_ERROR"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CorporateSupplierCreate"
+              }
+            }
+          }
+        },
+        "tags": [
+          "suppliers"
+        ]
+      }
+    },
+    "/data/health": {
+      "get": {
+        "responses": {
+          "default": {
+            "$ref": "#/components/responses/DEFAULT_ERROR"
+          }
+        },
+        "tags": [
+          "suppliers"
+        ]
+      }
+    },
+    "/data/certifications": {
+      "post": {
+        "responses": {
+          "422": {
+            "$ref": "#/components/responses/UNPROCESSABLE_ENTITY"
+          },
+          "200": {
+            "description": "A certification has been created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CertificationResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/DEFAULT_ERROR"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CertificationCreate"
+              }
+            }
+          }
+        },
+        "tags": [
+          "supplierData"
+        ]
+      }
+    },
+    "/data/certifications/{certification_id}": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "A certification response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CertificationResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/DEFAULT_ERROR"
+          }
+        },
+        "tags": [
+          "supplierData"
+        ]
+      },
+      "parameters": [
+        {
+          "in": "path",
+          "name": "certification_id",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      ],
+      "put": {
+        "responses": {
+          "422": {
+            "$ref": "#/components/responses/UNPROCESSABLE_ENTITY"
+          },
+          "200": {
+            "description": "A certification update",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CertificationResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/DEFAULT_ERROR"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CertificationUpdate"
+              }
+            }
+          }
+        },
+        "tags": [
+          "supplierData"
+        ]
+      },
+      "delete": {
+        "responses": {
+          "200": {
+            "description": "A certification update",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CertificationResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/DEFAULT_ERROR"
+          }
+        },
+        "tags": [
+          "supplierData"
+        ]
+      }
+    },
+    "/data/suppliers/{supplier_id}/certifications": {
+      "post": {
+        "responses": {
+          "422": {
+            "$ref": "#/components/responses/UNPROCESSABLE_ENTITY"
+          },
+          "200": {
+            "description": "A certification update",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CertificationResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/DEFAULT_ERROR"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CertificationCreate"
+              }
+            }
+          }
+        },
+        "tags": [
+          "supplierData"
+        ]
+      },
+      "parameters": [
+        {
+          "in": "path",
+          "name": "supplier_id",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      ],
+      "get": {
+        "responses": {
+          "200": {
+            "description": "A certification list for the supplier has been retrieved",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LegislativeSupplierCertificationResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/DEFAULT_ERROR"
+          }
+        },
+        "tags": [
+          "supplierData"
+        ]
+      }
+    },
+    "/data/suppliers/{supplier_id}/certifications/{certification_id}": {
+      "put": {
+        "responses": {
+          "422": {
+            "$ref": "#/components/responses/UNPROCESSABLE_ENTITY"
+          },
+          "200": {
+            "description": "A certification list for the supplier has been retrieved",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LegislativeSupplierResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/DEFAULT_ERROR"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CertificationUpdate"
+              }
+            }
+          }
+        },
+        "tags": [
+          "supplierData"
+        ]
+      },
+      "parameters": [
+        {
+          "in": "path",
+          "name": "certification_id",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        {
+          "in": "path",
+          "name": "supplier_id",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      ],
+      "delete": {
+        "responses": {
+          "200": {
+            "description": "Remove a certification for the supplier",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LegislativeSupplierResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/DEFAULT_ERROR"
+          }
+        },
+        "tags": [
+          "supplierData"
+        ]
+      }
+    },
+    "/data/suppliers/{supplier_id}/facilities/{facility_id}/certifications": {
+      "post": {
+        "responses": {
+          "422": {
+            "$ref": "#/components/responses/UNPROCESSABLE_ENTITY"
+          },
+          "200": {
+            "description": "A certification to the supplier facility has been created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SupplierFacilityResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/DEFAULT_ERROR"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CertificationCreate"
+              }
+            }
+          }
+        },
+        "tags": [
+          "supplierData"
+        ]
+      },
+      "parameters": [
+        {
+          "in": "path",
+          "name": "facility_id",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        {
+          "in": "path",
+          "name": "supplier_id",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      ],
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Remove a certification for the supplier",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SupplierFacilityCertificationResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/DEFAULT_ERROR"
+          }
+        },
+        "tags": [
+          "supplierData"
+        ]
+      }
+    },
+    "/data/suppliers/{supplier_id}/facilities/{facility_id}/certifications/{certification_id}": {
+      "delete": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "422": {
+            "$ref": "#/components/responses/UNPROCESSABLE_ENTITY"
+          },
+          "200": {
+            "description": "delete a certification for the supplier facility",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SupplierFacilityResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/DEFAULT_ERROR"
+          }
+        },
+        "tags": [
+          "supplierData"
+        ]
+      },
+      "parameters": [
+        {
+          "in": "path",
+          "name": "certification_id",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        {
+          "in": "path",
+          "name": "facility_id",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        {
+          "in": "path",
+          "name": "supplier_id",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      ]
+    },
+    "/data/addresses": {
+      "post": {
+        "responses": {
+          "422": {
+            "$ref": "#/components/responses/UNPROCESSABLE_ENTITY"
+          },
+          "200": {
+            "description": "delete a certification for the supplier facility",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AddressResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/DEFAULT_ERROR"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddressCreate"
+              }
+            }
+          }
+        },
+        "tags": [
+          "supplierData"
+        ]
+      }
+    },
+    "/data/addresses/{address_id}": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "An address has been retrieved",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AddressResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/DEFAULT_ERROR"
+          }
+        },
+        "tags": [
+          "supplierData"
+        ]
+      },
+      "parameters": [
+        {
+          "in": "path",
+          "name": "address_id",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      ],
+      "put": {
+        "responses": {
+          "422": {
+            "$ref": "#/components/responses/UNPROCESSABLE_ENTITY"
+          },
+          "200": {
+            "description": "An address has been updated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AddressResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/DEFAULT_ERROR"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddressUpdate"
+              }
+            }
+          }
+        },
+        "tags": [
+          "supplierData"
+        ]
+      },
+      "delete": {
+        "responses": {
+          "200": {
+            "description": "An address has been retrieved",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AddressResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/DEFAULT_ERROR"
+          }
+        },
+        "tags": [
+          "supplierData"
+        ]
+      }
+    },
+    "/data/suppliers/{supplier_id}/addresses": {
+      "post": {
+        "responses": {
+          "422": {
+            "$ref": "#/components/responses/UNPROCESSABLE_ENTITY"
+          },
+          "200": {
+            "description": "An address has been created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LegislativeSupplierResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/DEFAULT_ERROR"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NestedAddressCreate"
+              }
+            }
+          }
+        },
+        "tags": [
+          "supplierData"
+        ]
+      },
+      "parameters": [
+        {
+          "in": "path",
+          "name": "supplier_id",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      ],
+      "get": {
+        "responses": {
+          "200": {
+            "description": "An address list for the supplier",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LegislativeSupplierAddressResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/DEFAULT_ERROR"
+          }
+        },
+        "tags": [
+          "supplierData"
+        ]
+      }
+    },
+    "/data/suppliers/{supplier_id}/addresses/{address_id}": {
+      "put": {
+        "responses": {
+          "422": {
+            "$ref": "#/components/responses/UNPROCESSABLE_ENTITY"
+          },
+          "200": {
+            "description": "An address has been created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LegislativeSupplierResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/DEFAULT_ERROR"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NestedAddressUpdate"
+              }
+            }
+          }
+        },
+        "tags": [
+          "supplierData"
+        ]
+      },
+      "parameters": [
+        {
+          "in": "path",
+          "name": "address_id",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        {
+          "in": "path",
+          "name": "supplier_id",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      ],
+      "delete": {
+        "responses": {
+          "200": {
+            "description": "Delete an address",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LegislativeSupplierResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/DEFAULT_ERROR"
+          }
+        },
+        "tags": [
+          "supplierData"
+        ]
+      }
+    },
+    "/data/suppliers/{supplier_id}/facilities/{facility_id}/addresses": {
+      "post": {
+        "responses": {
+          "422": {
+            "$ref": "#/components/responses/UNPROCESSABLE_ENTITY"
+          },
+          "200": {
+            "description": "An address for the supplier facility has been created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SupplierFacilityResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/DEFAULT_ERROR"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NestedAddressCreate"
+              }
+            }
+          }
+        },
+        "tags": [
+          "supplierData"
+        ]
+      },
+      "parameters": [
+        {
+          "in": "path",
+          "name": "facility_id",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        {
+          "in": "path",
+          "name": "supplier_id",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      ],
+      "get": {
+        "responses": {
+          "200": {
+            "description": "An address list for the supplier facility",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SupplierFacilityAddressResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/DEFAULT_ERROR"
+          }
+        },
+        "tags": [
+          "supplierData"
+        ]
+      }
+    },
+    "/data/suppliers/{supplier_id}/facilities/{facility_id}/addresses/{address_id}": {
+      "put": {
+        "responses": {
+          "422": {
+            "$ref": "#/components/responses/UNPROCESSABLE_ENTITY"
+          },
+          "200": {
+            "description": "An address for the supplier facility has been updated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SupplierFacilityResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/DEFAULT_ERROR"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NestedAddressUpdate"
+              }
+            }
+          }
+        },
+        "tags": [
+          "supplierData"
+        ]
+      },
+      "parameters": [
+        {
+          "in": "path",
+          "name": "facility_id",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        {
+          "in": "path",
+          "name": "address_id",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        {
+          "in": "path",
+          "name": "supplier_id",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      ],
+      "delete": {
+        "responses": {
+          "200": {
+            "description": "An address for the supplier facility has been deleted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SupplierFacilityResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/DEFAULT_ERROR"
+          }
+        },
+        "tags": [
+          "supplierData"
+        ]
+      }
+    },
+    "/data/contacts": {
+      "post": {
+        "responses": {
+          "422": {
+            "$ref": "#/components/responses/UNPROCESSABLE_ENTITY"
+          },
+          "200": {
+            "description": "An address for the supplier facility has been created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContactResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/DEFAULT_ERROR"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContactCreate"
+              }
+            }
+          }
+        },
+        "tags": [
+          "supplierData"
+        ]
+      }
+    },
+    "/data/contacts/{contact_id}": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "An address list for the supplier facility",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContactResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/DEFAULT_ERROR"
+          }
+        },
+        "tags": [
+          "supplierData"
+        ]
+      },
+      "parameters": [
+        {
+          "in": "path",
+          "name": "contact_id",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      ],
+      "put": {
+        "responses": {
+          "422": {
+            "$ref": "#/components/responses/UNPROCESSABLE_ENTITY"
+          },
+          "200": {
+            "description": "An address for the supplier facility has been updated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContactResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/DEFAULT_ERROR"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContactUpdate"
+              }
+            }
+          }
+        },
+        "tags": [
+          "supplierData"
+        ]
+      },
+      "delete": {
+        "responses": {
+          "200": {
+            "description": "An address for the supplier facility has been deleted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContactResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/DEFAULT_ERROR"
+          }
+        },
+        "tags": [
+          "supplierData"
+        ]
+      }
+    },
+    "/data/suppliers/{supplier_id}/contacts": {
+      "post": {
+        "responses": {
+          "422": {
+            "$ref": "#/components/responses/UNPROCESSABLE_ENTITY"
+          },
+          "200": {
+            "description": "A contact to the supplier has been created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LegislativeSupplierResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/DEFAULT_ERROR"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NestedContactCreate"
+              }
+            }
+          }
+        },
+        "tags": [
+          "supplierData"
+        ]
+      },
+      "parameters": [
+        {
+          "in": "path",
+          "name": "supplier_id",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      ],
+      "get": {
+        "responses": {
+          "200": {
+            "description": "A contact list to the supplier has been retrieved",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LegislativeSupplierContactResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/DEFAULT_ERROR"
+          }
+        },
+        "tags": [
+          "supplierData"
+        ]
+      }
+    },
+    "/data/suppliers/{supplier_id}/contacts/{contact_id}": {
+      "put": {
+        "responses": {
+          "422": {
+            "$ref": "#/components/responses/UNPROCESSABLE_ENTITY"
+          },
+          "200": {
+            "description": "An address for the supplier facility has been updated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LegislativeSupplierResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/DEFAULT_ERROR"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NestedContactUpdate"
+              }
+            }
+          }
+        },
+        "tags": [
+          "supplierData"
+        ]
+      },
+      "parameters": [
+        {
+          "in": "path",
+          "name": "contact_id",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        {
+          "in": "path",
+          "name": "supplier_id",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      ],
+      "delete": {
+        "responses": {
+          "200": {
+            "description": "A contact to the supplier has been deleted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LegislativeSupplierResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/DEFAULT_ERROR"
+          }
+        },
+        "tags": [
+          "supplierData"
+        ]
+      }
+    },
+    "/data/suppliers/{supplier_id}/facilities/{facility_id}/contacts": {
+      "post": {
+        "responses": {
+          "422": {
+            "$ref": "#/components/responses/UNPROCESSABLE_ENTITY"
+          },
+          "200": {
+            "description": "A contact for the supplier facility has been created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SupplierFacilityResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/DEFAULT_ERROR"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContactCreate"
+              }
+            }
+          }
+        },
+        "tags": [
+          "supplierData"
+        ]
+      },
+      "parameters": [
+        {
+          "in": "path",
+          "name": "facility_id",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        {
+          "in": "path",
+          "name": "supplier_id",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      ],
+      "get": {
+        "responses": {
+          "200": {
+            "description": "A contact list for the supplier facility has been retrieved",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SupplierFacilityContactResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/DEFAULT_ERROR"
+          }
+        },
+        "tags": [
+          "supplierData"
+        ]
+      }
+    },
+    "/data/suppliers/{supplier_id}/facilities/{facility_id}/contacts/{contact_id}": {
+      "put": {
+        "responses": {
+          "422": {
+            "$ref": "#/components/responses/UNPROCESSABLE_ENTITY"
+          },
+          "200": {
+            "description": "A contact for the supplier facility has been updated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SupplierFacilityResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/DEFAULT_ERROR"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NestedContactUpdate"
+              }
+            }
+          }
+        },
+        "tags": [
+          "supplierData"
+        ]
+      },
+      "parameters": [
+        {
+          "in": "path",
+          "name": "facility_id",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        {
+          "in": "path",
+          "name": "contact_id",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        {
+          "in": "path",
+          "name": "supplier_id",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      ],
+      "delete": {
+        "responses": {
+          "200": {
+            "description": "A contact to the supplier has been deleted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SupplierFacilityResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/DEFAULT_ERROR"
+          }
+        },
+        "tags": [
+          "supplierData"
+        ]
+      }
+    },
+    "/schemas/b2g_sources": {
+      "get": {
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          },
+          "201": {
+            "description": "The b2g sources schema"
+          },
+          "default": {
+            "$ref": "#/components/responses/DEFAULT_ERROR"
+          }
+        },
+        "tags": [
+          "types"
+        ]
+      }
+    },
+    "/schemas/certifications_subtypes": {
+      "get": {
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          },
+          "201": {
+            "description": "The certifications subtypes schema"
+          },
+          "default": {
+            "$ref": "#/components/responses/DEFAULT_ERROR"
+          }
+        },
+        "tags": [
+          "types"
+        ]
+      }
+    },
+    "/schemas/naics": {
+      "get": {
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          },
+          "201": {
+            "description": "The NAICS schema"
+          },
+          "default": {
+            "$ref": "#/components/responses/DEFAULT_ERROR"
+          }
+        },
+        "tags": [
+          "types"
+        ]
+      }
+    },
+    "/schemas/sam_certificates": {
+      "get": {
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          },
+          "201": {
+            "description": "The SAM certificates schema"
+          },
+          "default": {
+            "$ref": "#/components/responses/DEFAULT_ERROR"
+          }
+        },
+        "tags": [
+          "types"
+        ]
+      }
+    },
+    "/data/pipelines/{pipeline_id}": {
+      "get": {
+        "responses": {
+          "404": {
+            "description": "Pipeline not found"
+          },
+          "200": {
+            "description": "Pipeline Description",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PipelineResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/DEFAULT_ERROR"
+          }
+        },
+        "tags": [
+          "pipelines"
+        ]
+      },
+      "parameters": [
+        {
+          "in": "path",
+          "name": "pipeline_id",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      ],
+      "put": {
+        "responses": {
+          "422": {
+            "$ref": "#/components/responses/UNPROCESSABLE_ENTITY"
+          },
+          "default": {
+            "$ref": "#/components/responses/DEFAULT_ERROR"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PipelineUpdate"
+              }
+            }
+          }
+        },
+        "tags": [
+          "pipelines"
+        ]
+      }
+    },
+    "/data/pipelines": {
+      "post": {
+        "responses": {
+          "422": {
+            "$ref": "#/components/responses/UNPROCESSABLE_ENTITY"
+          },
+          "default": {
+            "$ref": "#/components/responses/DEFAULT_ERROR"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PipelineCreate"
+              }
+            }
+          }
+        },
+        "tags": [
+          "pipelines"
+        ]
+      }
+    },
+    "/data/tnv/addresses": {
+      "post": {
+        "responses": {
+          "422": {
+            "$ref": "#/components/responses/UNPROCESSABLE_ENTITY"
+          },
+          "default": {
+            "$ref": "#/components/responses/DEFAULT_ERROR"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddressCreate"
+              }
+            }
+          }
+        },
+        "tags": [
+          "tnv"
+        ]
+      }
+    },
+    "/data/tnv/addresses/{address_id}": {
+      "get": {
+        "responses": {
+          "default": {
+            "$ref": "#/components/responses/DEFAULT_ERROR"
+          }
+        },
+        "tags": [
+          "tnv"
+        ]
+      },
+      "parameters": [
+        {
+          "in": "path",
+          "name": "address_id",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      ]
+    }
+  },
+  "info": {
+    "title": "Data Service API",
+    "version": "8.0"
+  },
+  "tags": [
+    {
+      "name": "suppliers",
+      "description": ""
+    },
+    {
+      "name": "supplierData",
+      "description": ""
+    },
+    {
+      "name": "types",
+      "description": ""
+    },
+    {
+      "name": "pipelines",
+      "description": ""
+    },
+    {
+      "name": "tnv",
+      "description": ""
+    }
+  ],
+  "openapi": "3.0.2",
+  "components": {
+    "schemas": {
+      "Error": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "object",
+            "description": "Errors"
+          },
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "status": {
+            "type": "string",
+            "description": "Error name"
+          },
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          }
+        }
+      },
+      "PaginationMetadata": {
+        "type": "object",
+        "properties": {
+          "total": {
+            "type": "integer"
+          },
+          "total_pages": {
+            "type": "integer"
+          },
+          "first_page": {
+            "type": "integer"
+          },
+          "last_page": {
+            "type": "integer"
+          },
+          "page": {
+            "type": "integer"
+          },
+          "previous_page": {
+            "type": "integer"
+          },
+          "next_page": {
+            "type": "integer"
+          }
+        }
+      },
+      "AddressResponse": {
+        "type": "object",
+        "properties": {
+          "country": {
+            "type": "string"
+          },
+          "fax_number": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "addressline": {
+            "type": "string"
+          },
+          "address_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "phone_number": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          },
+          "pcode": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "address_id"
+        ]
+      },
+      "CorporateSupplierAddressResponse": {
+        "type": "object",
+        "properties": {
+          "address_type": {
+            "type": "string"
+          },
+          "address": {
+            "$ref": "#/components/schemas/AddressResponse"
+          }
+        }
+      },
+      "CertificationResponse": {
+        "type": "object",
+        "properties": {
+          "certification_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "certification_number": {
+            "type": "string"
+          },
+          "expires_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "certifying_body": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "certification_id"
+        ]
+      },
+      "CorporateSupplierCertificationResponse": {
+        "type": "object",
+        "properties": {
+          "certification": {
+            "$ref": "#/components/schemas/CertificationResponse"
+          }
+        }
+      },
+      "CorporateSupplierResponse": {
+        "type": "object",
+        "properties": {
+          "addresses": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CorporateSupplierAddressResponse"
+            }
+          },
+          "certifications": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CorporateSupplierCertificationResponse"
+            }
+          },
+          "corporate_supplier_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "duns_id": {
+            "type": "string"
+          },
+          "naics": {
+            "type": "string"
+          },
+          "website_url": {
+            "type": "string"
+          },
+          "corporate_supplier_description": {
+            "type": "string"
+          },
+          "date_founded": {
+            "type": "string",
+            "format": "date"
+          },
+          "yearly_revenue": {
+            "type": "string"
+          },
+          "corporate_supplier_name": {
+            "type": "string"
+          },
+          "email_domain": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "corporate_supplier_id"
+        ]
+      },
+      "LegislativeSupplierCreate": {
+        "type": "object",
+        "properties": {
+          "entity_structure": {
+            "type": "string"
+          },
+          "legislative_supplier_name": {
+            "type": "string"
+          },
+          "corporate_supplier_id": {
+            "type": "string"
+          },
+          "duns_id": {
+            "type": "string"
+          },
+          "legislative_supplier_description": {
+            "type": "string"
+          },
+          "date_founded": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "legislative_supplier_name"
+        ]
+      },
+      "LegislativeSupplierAddressResponse": {
+        "type": "object",
+        "properties": {
+          "address_type": {
+            "type": "string"
+          },
+          "address": {
+            "$ref": "#/components/schemas/AddressResponse"
+          }
+        }
+      },
+      "LegislativeSupplierCertificationResponse": {
+        "type": "object",
+        "properties": {
+          "certification": {
+            "$ref": "#/components/schemas/CertificationResponse"
+          }
+        }
+      },
+      "SupplierBuyerResponse": {
+        "type": "object",
+        "properties": {
+          "buyer_known_as": {
+            "type": "object"
+          }
+        }
+      },
+      "ContactResponse": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "contact_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "middle_name": {
+            "type": "string"
+          },
+          "mobile_phone_number": {
+            "type": "string"
+          },
+          "first_name": {
+            "type": "string"
+          },
+          "last_name": {
+            "type": "string"
+          },
+          "preferred_language_code": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "contact_id"
+        ]
+      },
+      "LegislativeSupplierContactResponse": {
+        "type": "object",
+        "properties": {
+          "contact": {
+            "$ref": "#/components/schemas/ContactResponse"
+          },
+          "contact_type": {
+            "type": "string"
+          }
+        }
+      },
+      "LegislativeSupplierResponse": {
+        "type": "object",
+        "properties": {
+          "corporate_supplier": {
+            "$ref": "#/components/schemas/CorporateSupplierResponse"
+          },
+          "addresses": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LegislativeSupplierAddressResponse"
+            }
+          },
+          "entity_structure": {
+            "type": "string"
+          },
+          "legislative_supplier_name": {
+            "type": "string"
+          },
+          "certifications": {
+            "$ref": "#/components/schemas/LegislativeSupplierCertificationResponse"
+          },
+          "supplier_buyers": {
+            "$ref": "#/components/schemas/SupplierBuyerResponse"
+          },
+          "contacts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LegislativeSupplierContactResponse"
+            }
+          },
+          "legislative_supplier_description": {
+            "type": "string"
+          },
+          "legislative_supplier_id": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "required": [
+          "legislative_supplier_id"
+        ]
+      },
+      "SupplierUpdate": {
+        "type": "object",
+        "properties": {
+          "entity_structure": {
+            "type": "string"
+          },
+          "legislative_supplier_name": {
+            "type": "string"
+          },
+          "corporate_supplier_id": {
+            "type": "string"
+          },
+          "duns_id": {
+            "type": "string"
+          },
+          "naics": {
+            "type": "string"
+          },
+          "website_url": {
+            "type": "string"
+          },
+          "email_domain": {
+            "type": "string"
+          },
+          "legislative_supplier_description": {
+            "type": "string"
+          },
+          "buyer": {
+            "type": "object"
+          },
+          "yearly_revenue": {
+            "type": "string"
+          },
+          "corporate_supplier_name": {
+            "type": "string"
+          },
+          "date_founded": {
+            "type": "string"
+          }
+        }
+      },
+      "SupplierBuyerResponse1": {
+        "type": "object",
+        "properties": {
+          "buyer_legislative_supplier": {
+            "$ref": "#/components/schemas/LegislativeSupplierResponse"
+          },
+          "buyer_known_as": {
+            "type": "object"
+          },
+          "supplier_legislative_supplier": {
+            "$ref": "#/components/schemas/LegislativeSupplierResponse"
+          }
+        }
+      },
+      "SupplierFacilityAddressResponse": {
+        "type": "object",
+        "properties": {
+          "address_type": {
+            "type": "string"
+          },
+          "address": {
+            "$ref": "#/components/schemas/AddressResponse"
+          }
+        }
+      },
+      "SupplierFacilityCertificationResponse": {
+        "type": "object",
+        "properties": {
+          "certification": {
+            "$ref": "#/components/schemas/CertificationResponse"
+          }
+        }
+      },
+      "SupplierFacilityContactResponse": {
+        "type": "object",
+        "properties": {
+          "contact": {
+            "$ref": "#/components/schemas/ContactResponse"
+          }
+        }
+      },
+      "SupplierFacilityResponse": {
+        "type": "object",
+        "properties": {
+          "supplier_facility_description": {
+            "type": "string"
+          },
+          "supplier_facility_name": {
+            "type": "string"
+          },
+          "addresses": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SupplierFacilityAddressResponse"
+            }
+          },
+          "certifications": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SupplierFacilityCertificationResponse"
+            }
+          },
+          "contacts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SupplierFacilityContactResponse"
+            }
+          },
+          "supplier_facility_id": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "required": [
+          "supplier_facility_id"
+        ]
+      },
+      "SupplierFacilityCreate": {
+        "type": "object",
+        "properties": {
+          "supplier_facility_description": {
+            "type": "string"
+          },
+          "supplier_facility_name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "supplier_facility_name"
+        ]
+      },
+      "SupplierFacilityUpdate": {
+        "type": "object",
+        "properties": {
+          "supplier_facility_description": {
+            "type": "string"
+          },
+          "supplier_facility_name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "supplier_facility_name"
+        ]
+      },
+      "CorporateSupplierCreate": {
+        "type": "object",
+        "properties": {
+          "duns_id": {
+            "type": "string"
+          },
+          "naics": {
+            "type": "string"
+          },
+          "website_url": {
+            "type": "string"
+          },
+          "corporate_supplier_description": {
+            "type": "string"
+          },
+          "email_domain": {
+            "type": "string"
+          },
+          "yearly_revenue": {
+            "type": "string"
+          },
+          "corporate_supplier_name": {
+            "type": "string"
+          },
+          "date_founded": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "corporate_supplier_name"
+        ]
+      },
+      "CertificationCreate": {
+        "type": "object",
+        "properties": {
+          "certifying_body": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "certification_number": {
+            "type": "string"
+          },
+          "expires_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "CertificationUpdate": {
+        "type": "object",
+        "properties": {
+          "certifying_body": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "certification_number": {
+            "type": "string"
+          },
+          "expires_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "AddressCreate": {
+        "type": "object",
+        "properties": {
+          "country": {
+            "type": "string"
+          },
+          "fax_number": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "addressline": {
+            "type": "string"
+          },
+          "phone_number": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          },
+          "pcode": {
+            "type": "string"
+          }
+        }
+      },
+      "AddressUpdate": {
+        "type": "object",
+        "properties": {
+          "country": {
+            "type": "string"
+          },
+          "fax_number": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "addressline": {
+            "type": "string"
+          },
+          "phone_number": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          },
+          "pcode": {
+            "type": "string"
+          }
+        }
+      },
+      "NestedAddressCreate": {
+        "type": "object",
+        "properties": {
+          "address_type": {
+            "type": "string"
+          },
+          "address": {
+            "$ref": "#/components/schemas/AddressCreate"
+          }
+        },
+        "required": [
+          "address"
+        ]
+      },
+      "NestedAddressUpdate": {
+        "type": "object",
+        "properties": {
+          "address_type": {
+            "type": "string"
+          },
+          "address": {
+            "$ref": "#/components/schemas/AddressUpdate"
+          }
+        },
+        "required": [
+          "address"
+        ]
+      },
+      "ContactCreate": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "middle_name": {
+            "type": "string"
+          },
+          "mobile_phone_number": {
+            "type": "string"
+          },
+          "first_name": {
+            "type": "string"
+          },
+          "last_name": {
+            "type": "string"
+          },
+          "preferred_language_code": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          }
+        }
+      },
+      "ContactUpdate": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "middle_name": {
+            "type": "string"
+          },
+          "mobile_phone_number": {
+            "type": "string"
+          },
+          "first_name": {
+            "type": "string"
+          },
+          "last_name": {
+            "type": "string"
+          },
+          "preferred_language_code": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          }
+        }
+      },
+      "NestedContactCreate": {
+        "type": "object",
+        "properties": {
+          "contact": {
+            "$ref": "#/components/schemas/ContactCreate"
+          },
+          "contact_type": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "contact"
+        ]
+      },
+      "NestedContactUpdate": {
+        "type": "object",
+        "properties": {
+          "contact": {
+            "$ref": "#/components/schemas/ContactUpdate"
+          },
+          "contact_type": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "contact"
+        ]
+      },
+      "PipelineResponse": {
+        "type": "object",
+        "properties": {
+          "pipeline_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "pipeline_name": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "outputs": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          }
+        },
+        "required": [
+          "pipeline_name"
+        ]
+      },
+      "PipelineCreate": {
+        "type": "object",
+        "properties": {
+          "job_id": {
+            "type": "string"
+          },
+          "source": {
+            "type": "object"
+          },
+          "batch_id": {
+            "type": "string"
+          },
+          "schedule": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "pipeline_type": {
+            "type": "string"
+          }
+        }
+      },
+      "PipelineUpdate": {
+        "type": "object",
+        "properties": {
+          "lineage": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "pending",
+              "failed",
+              "finished",
+              "stopped",
+              "running",
+              "scheduled"
+            ]
+          }
+        }
+      }
+    },
+    "responses": {
+      "DEFAULT_ERROR": {
+        "description": "Default error response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      },
+      "UNPROCESSABLE_ENTITY": {
+        "description": "Unprocessable Entity",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      }
+    }
+  }
+}
